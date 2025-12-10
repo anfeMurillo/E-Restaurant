@@ -1,4 +1,4 @@
-package enummeasure
+package measure
 
 type Measure string
 

@@ -1,4 +1,4 @@
-package modeldish
+package dish
 
 type Dish struct {
 	DishId       int     `db:"dish_id" json:"dish_id"`

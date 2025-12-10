@@ -1,4 +1,4 @@
-package modelrestaurantstaff
+package restaurantstaff
 
 type RestaurantStaff struct {
 	RestaurantId int `db:"restaurant_id" json:"restaurant_id"`

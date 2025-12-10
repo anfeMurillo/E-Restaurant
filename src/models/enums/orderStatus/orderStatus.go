@@ -1,4 +1,4 @@
-package enumorderstatus
+package orderstatus
 
 type OrderStatus string
 

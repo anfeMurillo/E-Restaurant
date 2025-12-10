@@ -1,4 +1,4 @@
-package main
+package ingredient
 
 type Ingredient struct {
 	IngredientId   string  `db:"ingredient_id" json:"ingredient_id"`

@@ -1,4 +1,4 @@
-package modelorderitem
+package orderitem
 
 type OrderItem struct {
 	OrderItemId   int     `db:"order_item_id" json:"order_item_id"`

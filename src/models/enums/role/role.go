@@ -1,4 +1,4 @@
-package enumrole
+package role
 
 type Role string
 

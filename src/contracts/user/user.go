@@ -2,15 +2,15 @@ package user
 
 import (
 	"context" // Esto es util para la DB y poder cerrar
-	modeluser "e-restaurant/models/modelUser"
+	userapp "e-restaurant/models/userApp"
 )
 
 type Repository interface {
-	Create(ctx context.Context, user *modeluser.User) (*modeluser.User, error)
+	Create(ctx context.Context, user *userapp.User) (*userapp.User, error)
 
-	GetById(ctx context.Context, userId int) (*modeluser.User, error)
+	GetById(ctx context.Context, userId int) (*userapp.User, error)
 
-	GetRestaurantStaff(ctx context.Context, role string, restaurantId int) ([]*modeluser.User, error)
+	GetRestaurantStaff(ctx context.Context, role string, restaurantId int) ([]*userapp.User, error)
 
 	UpdateName(ctx context.Context, userId int, new string) error
 

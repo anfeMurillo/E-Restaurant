@@ -1,4 +1,4 @@
-package enumpayment
+package payment
 
 type PaymentStatus string
 
