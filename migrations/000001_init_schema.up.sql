@@ -43,7 +43,7 @@ create type "measure_unit" as enum (
 create table dishes (
     "dish_id" serial primary key ,
     "restaurant_id" int not null ,
-    dish_name varchar not null ,
+    "dish_name" varchar not null ,
     "price" decimal(10,2) not null ,
 
     foreign key (restaurant_id) references restaurants(restaurant_id)
