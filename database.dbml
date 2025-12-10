@@ -30,6 +30,15 @@ Table restaurants {
   is_open bool [not null, default: false]
 }
 
+Table restaurant_staff {
+  restaurant_id int [ref: > restaurants.restaurant_id]
+  user_id int [ref: - users.user_id]
+
+  indexes {
+  (restaurant_id,user_id) [pk]
+  }
+}
+
 // --- MENÚ E INVENTARIO ---
 
 Enum measure_unit {
@@ -50,6 +59,7 @@ Table dishes {
 Table ingredients {
   ingredient_id varchar [pk]
   ingredient_name varchar [not null]
+  price decimal (10,2) [not null, note: "CHECK (price >= 0)"]
 }
 
 Table inventories {
@@ -58,7 +68,6 @@ Table inventories {
   ingredient_id varchar [not null, ref: > ingredients.ingredient_id]
   stock decimal(10,3) [not null, note: "CHECK (stock >= 0)"]
   unit measure_unit [not null]
-  price decimal (10,2) [not null, note: "CHECK (price >= 0)"]
   expiration_date date
 }
 

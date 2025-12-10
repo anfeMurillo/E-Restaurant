@@ -17,6 +17,12 @@
       "y": 50
     },
     {
+      "name": "restaurant_staff",
+      "schemaName": "public",
+      "x": 384.514404296875,
+      "y": -198.08747514910542
+    },
+    {
       "name": "dishes",
       "schemaName": "public",
       "x": 686.2919921875,
@@ -68,6 +74,36 @@
   "tableGroupCollapseStates": [],
   "stickyNoteLayouts": [],
   "referencePaths": [
+    {
+      "firstFieldNames": [
+        "restaurant_id"
+      ],
+      "firstTableName": "restaurants",
+      "firstSchemaName": "public",
+      "firstRelation": "1",
+      "secondFieldNames": [
+        "restaurant_id"
+      ],
+      "secondTableName": "restaurant_staff",
+      "secondSchemaName": "public",
+      "secondRelation": "*",
+      "checkPoints": []
+    },
+    {
+      "firstFieldNames": [
+        "user_id"
+      ],
+      "firstTableName": "users",
+      "firstSchemaName": "public",
+      "firstRelation": "1",
+      "secondFieldNames": [
+        "user_id"
+      ],
+      "secondTableName": "restaurant_staff",
+      "secondSchemaName": "public",
+      "secondRelation": "1",
+      "checkPoints": []
+    },
     {
       "firstFieldNames": [
         "restaurant_id"

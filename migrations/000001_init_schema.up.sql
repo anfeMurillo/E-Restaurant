@@ -30,6 +30,15 @@ create table restaurants (
     "is_open" bool default false not null
 );
 
+create table restaurant_staff (
+    "restaurant_id" int,
+    "user_id" int
+
+    primary key (restaurant_id,user_id)
+    foreign key (restaurant_id) references restaurants(restaurant_id)
+    foreign key (user_id) references restaurants(user_id)
+)
+
 -- MENU E INVENTARIO --
 
 create type "measure_unit" as enum (
@@ -51,7 +60,8 @@ create table dishes (
 
 create table ingredients (
     "ingredient_id" varchar primary key ,
-    "ingredient_name" varchar not null
+    "ingredient_name" varchar not null ,
+    "price" non_negative_number not null ,
 );
 
 -- Esto es como crea un política en mi base de datos
@@ -65,7 +75,6 @@ create table inventories (
     "ingredient_id" varchar not null ,
     "stock" non_negative_number not null ,
     "unit" measure_unit not null,
-    "price" non_negative_number not null ,
     "expiration_date" date,
 
     foreign key (restaurant_id) references restaurants(restaurant_id),

@@ -11,6 +11,5 @@ type Inventory struct {
 	IngredientId   string              `db:"ingredient_id" json:"ingredient_id"`
 	Stock          uint                `db:"stock" json:"stock"`
 	Unit           enummeasure.Measure `db:"unit" json:"unit"`
-	Price          float64             `db:"price" json:"price"`
 	ExpirationDate time.Time           `db:"expiration_date" json:"expiration_date"`
 }

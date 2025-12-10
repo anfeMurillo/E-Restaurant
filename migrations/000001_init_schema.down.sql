@@ -6,6 +6,7 @@ drop table if exists orders;
 drop table if exists lost_inventories;
 drop table if exists needed_ingredients;
 drop table if exists inventories;
+drop table if exists restaurant_staff;
 
 -- Ahora borrar las tables bases q no tienen foreign keys --
 
