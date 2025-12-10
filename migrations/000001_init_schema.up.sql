@@ -148,6 +148,7 @@ create table payments (
     "amount" decimal(10,2) not null ,
     "currency" char(3) default 'USD',
     "method" payment_method not null ,
+    "status" payment_status not null ,
     "created_at" timestamp with time zone default now(),
 
     foreign key (user_id) references users(user_id),
