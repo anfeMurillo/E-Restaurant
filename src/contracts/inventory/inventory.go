@@ -10,6 +10,10 @@ import (
 type Repository interface {
 	Create(ctx context.Context, inventory *inventory.Inventory) (*inventory.Inventory, error)
 
+	GetAll(ctx context.Context) ([]*inventory.Inventory, error)
+
+	GetByRestaurant(ctx context.Context, restaurantId int) ([]*inventory.Inventory, error)
+
 	AddStock(ctx context.Context, quantity float64, unit measure.Measure, expitationDate time.Time) error
 
 	RemoveStock(ctx context.Context, quantity float64, unit measure.Measure) (string, error)
