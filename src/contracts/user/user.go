@@ -10,9 +10,13 @@ type Repository interface {
 
 	GetById(ctx context.Context, userId int) (*userapp.User, error)
 
-	GetRestaurantStaff(ctx context.Context, role string, restaurantId int) ([]*userapp.User, error)
+	GetRestaurantStaff(ctx context.Context, restaurantId int) ([]*userapp.User, error)
 
 	UpdateName(ctx context.Context, userId int, new string) error
+
+	UpdateFirstName(ctx context.Context, userId int, new string) error
+
+	UpdateLastName(ctx context.Context, userId int, new string) error
 
 	UpdateEmail(ctx context.Context, userId int, new string) error
 
