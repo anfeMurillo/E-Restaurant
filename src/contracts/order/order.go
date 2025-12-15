@@ -11,6 +11,8 @@ type Repository interface {
 
 	GetById(ctx context.Context, orderID int) (*order.Order, error)
 
+	Delete(ctx context.Context, orderID int) error
+
 	GetByRestaurant(ctx context.Context) ([]*order.Order, error)
 
 	UpdateStatus(ctx context.Context, oStatus orderstatus.OrderStatus) error
