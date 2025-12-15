@@ -42,6 +42,28 @@ func (d *DishRepository) GetById(ctx context.Context, dishId int) (*dish.Dish, e
 	return dish, nil
 }
 
+func (d *DishRepository) GetByRestaurant(ctx context.Context, restaurantId int) (*dish.Dish, error) {
+	query := `
+	SELECT
+	
+	d.dish_id,
+	d.restaurant_id,
+	d.dish_name,
+	d.price
+	
+	FROM dishes d
+	INNER JOIN restaurants USING (restaurant_id)
+	WHERE dish_id = $1
+	`
+	dish := &dish.Dish{}
+
+	err := d.db.QueryRowContext(ctx, query, restaurantId).Scan(&dish.DishId, &dish.RestaurantId, &dish.DishName, &dish.Price)
+	if err != nil {
+		return nil, err
+	}
+	return dish, nil
+}
+
 func (d *DishRepository) GetAll(ctx context.Context) ([]*dish.Dish, error) {
 
 	query := `
