@@ -8,6 +8,12 @@ import (
 type Repository interface {
 	Create(ctx context.Context, ingredient *ingredient.Ingredient) (*ingredient.Ingredient, error)
 
+	GetById(ctx context.Context, ingredientID string) (*ingredient.Ingredient, error)
+
+	GetByDish(ctx context.Context, dishID int) ([]*ingredient.Ingredient, error)
+
+	GetAll(ctx context.Context) ([]*ingredient.Ingredient, error)
+
 	UpdateId(ctx context.Context, ingredientId string, new string) error
 
 	UpdateName(ctx context.Context, ingredientId string, new string) error
