@@ -129,3 +129,13 @@ func (u *UserRepository) AssignRole(ctx context.Context, userId int, role string
 	_, err := u.db.ExecContext(ctx, query, role, userId)
 	return err
 }
+
+func (u *UserRepository) Delete(ctx context.Context, userID int) error {
+	query := `
+	DELETE FROM users
+	WHERE user_id = $1
+	`
+	_, err := u.db.ExecContext(ctx, query, userID)
+
+	return err
+}

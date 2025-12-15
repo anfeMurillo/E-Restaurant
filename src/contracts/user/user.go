@@ -27,4 +27,6 @@ type Repository interface {
 	ToggleActiveState(ctx context.Context, userId int) error
 
 	AssignRole(ctx context.Context, userId int, role string) error
+
+	Delete(ctx context.Context, userID int) error
 }
