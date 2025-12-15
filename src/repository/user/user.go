@@ -89,6 +89,7 @@ func (u *UserRepository) UpdateName(ctx context.Context, userId int, new string)
 	_, err := u.db.ExecContext(ctx, query, new, userId)
 	return err
 }
+
 func (u *UserRepository) UpdateFirstName(ctx context.Context, userId int, new string) error {
 	query := `UPDATE users SET first_name = $1 WHERE user_id = $2`
 	_, err := u.db.ExecContext(ctx, query, new, userId)
