@@ -12,6 +12,8 @@ type Repository interface {
 
 	GetAll(ctx context.Context) ([]*inventory.Inventory, error)
 
+	GetById(ctx context.Context, inventoryId int) (*inventory.Inventory, error)
+
 	GetByRestaurant(ctx context.Context, restaurantId int) ([]*inventory.Inventory, error)
 
 	AddStock(ctx context.Context, quantity float64, unit measure.Measure, expitationDate time.Time) error
@@ -21,4 +23,6 @@ type Repository interface {
 	UpdateUnit(ctx context.Context, InventoryId int, unit measure.Measure) error
 
 	UpdateExpitationDate(ctx context.Context, InventoryId int, expirationDate time.Time) error
+
+	Delete(ctx context.Context, inventoryId int) error
 }
