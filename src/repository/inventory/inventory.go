@@ -59,6 +59,8 @@ func (i *InventoryRepository) GetAll(ctx context.Context) ([]*inventory.Inventor
 		return nil, err
 	}
 
+	defer rows.Close()
+
 	inventoryItemList := []*inventory.Inventory{}
 
 	for rows.Next() {
@@ -111,6 +113,8 @@ func (i *InventoryRepository) GetByRestaurant(ctx context.Context, restaurantId 
 	`
 
 	rows, err := i.db.QueryContext(ctx, query, restaurantId)
+
+	defer rows.Close()
 
 	if err != nil {
 		return nil, err

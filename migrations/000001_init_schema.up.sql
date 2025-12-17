@@ -95,7 +95,7 @@ create table needed_ingredients (
 );
 
 create table lost_inventories (
-    "lost_id" serial primary key ,
+    "lost_inventory_id" serial primary key ,
     "inventory_id" int not null ,
     "quantity" decimal(10,2) not null ,
     "unit" measure_unit not null ,

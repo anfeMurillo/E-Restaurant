@@ -93,14 +93,14 @@ Table needed_ingredients {
 }
 
 Table lost_inventories {
-  lost_id      int            [pk, increment]
-  inventory_id int            [not null, ref: > inventories.inventory_id]
-  quantity     decimal(10,3)  [not null]
+  lost_inventory_id int            [pk, increment]
+  inventory_id      int            [not null, ref: > inventories.inventory_id]
+  quantity          decimal(10,3)  [not null]
 
-  unit         measure_unit   [not null]
+  unit              measure_unit   [not null]
 
-  unit_price   decimal (10,2) [not null]
-  date_event   timestamp      [default: `now()`]
+  unit_price        decimal (10,2) [not null]
+  date_event        timestamp      [default: `now()`]
 }
 
 // --- ÓRDENES ---
