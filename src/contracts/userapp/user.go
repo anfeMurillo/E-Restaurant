@@ -1,4 +1,4 @@
-package user
+package userapp
 
 import (
 	"context" // Esto es util para la DB y poder cerrar
